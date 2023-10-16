@@ -1,23 +1,16 @@
-
 import openai
 
-openai.api_key = 'YOUR_API_KEY'
-
-response = openai.Completion.create(
-  model="gpt-3.5-turbo",
-  prompt="Translate the following English text to French: 'Hello, how are you?'",
-  max_tokens=50
-)
-
-print(response.choices[0].text.strip())
+openai.api_key = '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'
 
 
+a=input("Give input")
 
-response = openai.Completion.create(
+
+response = openai.ChatCompletion.create(
   model="gpt-3.5-turbo",
   messages=[
         {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Who won the world series in 2020?"},
+        {"role": "user", "content": a},
     ]
 )
 
